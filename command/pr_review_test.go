@@ -245,7 +245,7 @@ func TestPRReview_interactive(t *testing.T) {
 	as.Stub([]*QuestionStub{
 		{
 			Name:  "confirm",
-			Value: "Submit",
+			Value: true,
 		},
 	})
 
@@ -304,7 +304,7 @@ func TestPRReview_interactive_no_body(t *testing.T) {
 	as.Stub([]*QuestionStub{
 		{
 			Name:  "confirm",
-			Value: "Submit",
+			Value: true,
 		},
 	})
 
@@ -346,7 +346,7 @@ func TestPRReview_interactive_blank_approve(t *testing.T) {
 	as.Stub([]*QuestionStub{
 		{
 			Name:  "confirm",
-			Value: "Submit",
+			Value: true,
 		},
 	})
 

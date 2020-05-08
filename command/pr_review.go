@@ -228,28 +228,23 @@ func reviewSurvey(cmd *cobra.Command) (*api.PullRequestReviewInput, error) {
 		fmt.Fprintf(out, "Got:\n%s", renderedBody)
 	}
 
-	confirmAnswers := struct {
-		Confirm string
-	}{}
+	confirm := false
 	confirmQs := []*survey.Question{
 		{
 			Name: "confirm",
-			Prompt: &survey.Select{
-				Message: "What's next?",
-				Options: []string{
-					"Submit",
-					"Cancel",
-				},
+			Prompt: &survey.Confirm{
+				Message: "Submit?",
+				Default: true,
 			},
 		},
 	}
 
-	err = SurveyAsk(confirmQs, &confirmAnswers)
+	err = SurveyAsk(confirmQs, &confirm)
 	if err != nil {
 		return nil, err
 	}
 
-	if confirmAnswers.Confirm == "Cancel" {
+	if !confirm {
 		return nil, nil
 	}
 
