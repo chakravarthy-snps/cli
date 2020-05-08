@@ -202,7 +202,7 @@ func reviewSurvey(cmd *cobra.Command) (*api.PullRequestReviewInput, error) {
 			Prompt: &surveyext.GhEditor{
 				EditorCommand: editorCommand,
 				Editor: &survey.Editor{
-					Message:  "Review Body",
+					Message:  "Review body",
 					FileName: "*.md",
 				},
 			},
