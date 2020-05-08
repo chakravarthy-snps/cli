@@ -212,8 +212,8 @@ func reviewSurvey(cmd *cobra.Command) (*api.PullRequestReviewInput, error) {
 		return nil, err
 	}
 
-	if reviewState == api.ReviewComment && bodyAnswers.Body == "" {
-		return nil, errors.New("cannot leave blank comment")
+	if bodyAnswers.Body == "" && (reviewState == api.ReviewComment || reviewState == api.ReviewRequestChanges) {
+		return nil, errors.New("this type of review cannot be blank")
 	}
 
 	if len(bodyAnswers.Body) > 0 {
