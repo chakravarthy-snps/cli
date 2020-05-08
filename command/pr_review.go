@@ -31,6 +31,8 @@ var prReviewCmd = &cobra.Command{
 
 Examples:
 
+	gh pr review                                  # add a review for the current branch's pull request
+	gh pr review 123                              # add a review for pull request 123
 	gh pr review -a                               # mark the current branch's pull request as approved
 	gh pr review -c -b "interesting"              # comment on the current branch's pull request
 	gh pr review 123 -r -b "needs more ascii art" # request changes on pull request 123
