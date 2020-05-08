@@ -165,7 +165,7 @@ func reviewSurvey(cmd *cobra.Command) (*api.PullRequestReviewInput, error) {
 		{
 			Name: "reviewType",
 			Prompt: &survey.Select{
-				Message: "What kind of review do you want to create?",
+				Message: "What kind of review do you want to give?",
 				Options: []string{
 					"Comment",
 					"Approve",
