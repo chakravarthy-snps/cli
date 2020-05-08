@@ -169,7 +169,7 @@ func reviewSurvey(cmd *cobra.Command) (*api.PullRequestReviewInput, error) {
 				Options: []string{
 					"Comment",
 					"Approve",
-					"Request Changes",
+					"Request changes",
 					"Cancel",
 				},
 			},
